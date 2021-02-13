@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="BookshopOnlineLoginCase">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../eclipse/jee-2020-09/eclipse/"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="11"/>
+    <property name="source" value="11"/>
+    <path id="Maven Dependencies.libraryclasspath">
+        <pathelement location="../../.m2/repository/org/junit/jupiter/junit-jupiter-api/5.6.2/junit-jupiter-api-5.6.2.jar"/>
+        <pathelement location="../../.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar"/>
+        <pathelement location="../../.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar"/>
+        <pathelement location="../../.m2/repository/org/junit/platform/junit-platform-commons/1.6.2/junit-platform-commons-1.6.2.jar"/>
+        <pathelement location="../../.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.6.2/junit-jupiter-engine-5.6.2.jar"/>
+        <pathelement location="../../.m2/repository/org/junit/platform/junit-platform-engine/1.6.2/junit-platform-engine-1.6.2.jar"/>
+        <pathelement location="../../.m2/repository/org/junit/jupiter/junit-jupiter-params/5.6.2/junit-jupiter-params-5.6.2.jar"/>
+        <pathelement location="../../.m2/repository/org/openjfx/javafx-base/11.0.2/javafx-base-11.0.2.jar"/>
+        <pathelement location="../../.m2/repository/org/openjfx/javafx-base/11.0.2/javafx-base-11.0.2-win.jar"/>
+        <pathelement location="../../.m2/repository/org/openjfx/javafx-controls/11.0.2/javafx-controls-11.0.2.jar"/>
+        <pathelement location="../../.m2/repository/org/openjfx/javafx-controls/11.0.2/javafx-controls-11.0.2-win.jar"/>
+        <pathelement location="../../.m2/repository/org/openjfx/javafx-graphics/11.0.2/javafx-graphics-11.0.2.jar"/>
+        <pathelement location="../../.m2/repository/org/openjfx/javafx-graphics/11.0.2/javafx-graphics-11.0.2-win.jar"/>
+        <pathelement location="../../.m2/repository/org/openjfx/javafx-fxml/11.0.2/javafx-fxml-11.0.2.jar"/>
+        <pathelement location="../../.m2/repository/org/openjfx/javafx-fxml/11.0.2/javafx-fxml-11.0.2-win.jar"/>
+        <pathelement location="../../.m2/repository/org/mybatis/mybatis/3.4.5/mybatis-3.4.5.jar"/>
+        <pathelement location="../../.m2/repository/com/itextpdf/itextpdf/5.5.9/itextpdf-5.5.9.jar"/>
+    </path>
+    <path id="BookshopOnlineLoginCase.classpath">
+        <pathelement location="target/classes"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="target/classes"/>
+        <copy includeemptydirs="false" todir="target/classes">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.xtend"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="target/classes"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="target/classes" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="BookshopOnlineLoginCase.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+</project>

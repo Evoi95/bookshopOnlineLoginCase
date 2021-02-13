@@ -7,11 +7,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 
+import bso.entity.pagamento.CartaCredito;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import pagamento.CartaCredito;
 
 public class CartaCreditoDao {
 	private PreparedStatement stmt=null;

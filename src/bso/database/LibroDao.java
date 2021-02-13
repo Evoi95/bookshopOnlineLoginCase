@@ -12,14 +12,14 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
 
-import controllerApp.SingeltonSystemState;
-import factoryBook.Factory;
+import bso.controller.SingeltonSystemState;
+import bso.entity.factoryBook.Factory;
+import bso.entity.factoryBook.Libro;
+import bso.entity.factoryBook.Raccolta;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import factoryBook.Libro;
-import factoryBook.Raccolta;
 
 public class LibroDao  {
 	private Factory f;
@@ -47,7 +47,7 @@ public class LibroDao  {
 	//getIstance 
 	//select * from libro where codice=isbn;
 	
-	public void getDesc(factoryBook.Libro l) throws SQLException
+	public void getDesc(bso.entity.factoryBook.Libro l) throws SQLException
 	{	           
 		conn = ConnToDb.generalConnection();
 

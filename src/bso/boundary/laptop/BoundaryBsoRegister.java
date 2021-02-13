@@ -7,8 +7,8 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
+import bso.controller.ControllerBsoRegister;
 import bso.database.UsersDao;
-import controllerApp.ControllerBsoRegister;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;

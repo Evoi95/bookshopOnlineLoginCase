@@ -5,11 +5,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import factoryBook.Raccolta;
+import bso.entity.pagamento.Pagamento;
+import bso.entity.users.singelton.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import pagamento.Pagamento;
-import users.singelton.User;
 
 public class PagamentoDao {
 	private static String qInsert ;
@@ -175,8 +174,7 @@ public ObservableList<Pagamento> getPagamenti()  {
 		}
 		}
 	
-	//catalogo.add(new Libro("pippo","pluto","it","fantasy","8004163529","paperino","avventura",100,11,11,5252020,18,null,true));
-	
+
 	System.out.println(catalogo);
 	return catalogo;
 		}

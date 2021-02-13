@@ -10,12 +10,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
 
-import controllerApp.SingeltonSystemState;
-import users.singelton.Admin;
-import users.singelton.Editore;
-import users.singelton.Scrittore;
-import users.singelton.TempUser;
-import users.singelton.User;
+import bso.controller.SingeltonSystemState;
+import bso.entity.users.singelton.Admin;
+import bso.entity.users.singelton.Editore;
+import bso.entity.users.singelton.Scrittore;
+import bso.entity.users.singelton.TempUser;
+import bso.entity.users.singelton.User;
 
 public class UsersDao  {
 	

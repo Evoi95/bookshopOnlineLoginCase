@@ -11,15 +11,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import factoryBook.Factory;
-import factoryBook.Giornale;
-import factoryBook.Libro;
+import bso.entity.factoryBook.Factory;
+import bso.entity.factoryBook.Giornale;
+import bso.entity.factoryBook.Libro;
+import bso.entity.factoryBook.Raccolta;
+import bso.entity.factoryBook.Rivista;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import factoryBook.Raccolta;
-import factoryBook.Rivista;
 
 public class RivistaDao {
 	private Factory f;

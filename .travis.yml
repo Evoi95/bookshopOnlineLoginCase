@@ -19,7 +19,7 @@ addons:
 
   sonarcloud:
     organization: "evoi95"
-    token: "9f9c272340a7929d8621953ee50991d97415c130" # encrypted value of your token
+    token: "5d42a3b5cc770b7769e54b1fd95113b1a795411e" # encrypted value of your token
 
     
 # Do not run travis install step
@@ -34,7 +34,7 @@ services:
    
 script:
     - mvn clean compile verify
-    - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=Evoi95_BSO-Maven
+    - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=Evoi95_bookshopOnlineLoginCase
     - mvn clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
 
     - ant build

@@ -17,7 +17,6 @@ class TestControllerVisualizzaGiornale {
 		cVG.setID(id);
 	}
 
-	
 	@Test
 	void testGetID() {
 		int x=cVG.getID();

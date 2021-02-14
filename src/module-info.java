@@ -1,19 +1,27 @@
-module com.example.test {
-    requires java.logging;
-	requires java.sql;
-	requires java.sql.rowset;
-	requires java.desktop;
+module BookshopOnlineLoginCase {
+	exports com.example.test;
+	exports bso.database;
+	exports bso.entity.pagamento;
+	exports bso.bean.web;
+	exports bso.entity.users.singelton;
+	exports bso.log;
+	exports bso.boundary.laptop;
+	exports bso.controller;
+	exports bso.entity.factoryBook;
+	exports bso.entity.negozio;
+
 	requires itextpdf;
+	requires java.desktop;
+	requires java.logging;
+	requires java.sql;
+	requires javafx.base;
 	requires javafx.controls;
 	requires javafx.fxml;
 	requires javafx.graphics;
-	requires javafx.base;
 	requires mybatis;
+	requires org.junit.jupiter.api;
+	requires junit;
 	
-	exports bso.boundary.laptop;
-	opens bso.boundary.laptop to javafx.graphics,javafx.base,javafx.controls,javafx.fxml;
-	exports bso.database;
-	opens bso.database to javafx.graphics,javafx.base,javafx.controls,javafx.fxml,java.sql;
 
-
+	
 }

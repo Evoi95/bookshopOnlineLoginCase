@@ -113,17 +113,13 @@ public class BoundaryVisualizzaRivista implements Initializable{
 	public void initialize(URL location, ResourceBundle resources) {
 		i = CVR.getID();
 		
-		try {
-			LabelTitolo.setText(CVR.getData(i).getTitolo());
-			LabelEditore.setText(CVR.getData(i).getEditore());
-			LabelLingua.setText(CVR.getData(i).getLingua());
-			LabelDate.setText(""+CVR.getData(i).getDataPubb());
-			LabelDisp.setText(""+CVR.getData(i).getDisp());
-			LabelPrezzo.setText(CVR.getData(i).getPrezzo()+"");
-			LabelCopieRimanenti.setText(CVR.getData(i).getCopieRim()+"");
-		} catch (SQLException e) {
-			
-		}
+		LabelTitolo.setText(CVR.getData(i).getTitolo());
+		LabelEditore.setText(CVR.getData(i).getEditore());
+		LabelLingua.setText(CVR.getData(i).getLingua());
+		LabelDate.setText(""+CVR.getData(i).getDataPubb());
+		LabelDisp.setText(""+CVR.getData(i).getDisp());
+		LabelPrezzo.setText(CVR.getData(i).getPrezzo()+"");
+		LabelCopieRimanenti.setText(CVR.getData(i).getCopieRim()+"");
 		
 
 	}

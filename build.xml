@@ -6,6 +6,7 @@
               as the first entry and export the buildfile again. --><project basedir="." default="build" name="BookshopOnlineLoginCase">
     <property environment="env"/>
     <property name="ECLIPSE_HOME" value="../../eclipse/jee-2020-09/eclipse/"/>
+    <property name="junit.output.dir" value="junit"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="11"/>
     <property name="source" value="11"/>
@@ -30,11 +31,99 @@
         <pathelement location="../../.m2/repository/mysql/mysql-connector-java/8.0.22/mysql-connector-java-8.0.22.jar"/>
         <pathelement location="../../.m2/repository/com/google/protobuf/protobuf-java/3.11.4/protobuf-java-3.11.4.jar"/>
     </path>
+    <path id="JUnit 5.libraryclasspath">
+        <pathelement location="../../.p2/pool/plugins/org.junit.jupiter.api_5.7.0.v20201026-1537.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.junit.jupiter.engine_5.7.0.v20201026-1537.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.junit.jupiter.migrationsupport_5.7.0.v20201026-1537.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.junit.jupiter.params_5.7.0.v20201026-1537.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.junit.platform.commons_1.7.0.v20201026-1537.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.junit.platform.engine_1.7.0.v20201026-1537.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.junit.platform.launcher_1.7.0.v20201026-1537.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.junit.platform.runner_1.7.0.v20201026-1537.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.junit.platform.suite.api_1.7.0.v20201026-1537.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.junit.vintage.engine_5.7.0.v20201026-1537.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.opentest4j_1.2.0.v20190826-0900.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.apiguardian_1.1.0.v20190826-0900.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.junit_4.13.0.v20200204-1500.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.hamcrest.core_1.3.0.v20180420-1519.jar"/>
+    </path>
+    <path id="Apache Tomcat v9.0 [Apache Tomcat v9.0].libraryclasspath">
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/annotations-api.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/catalina-ant.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/catalina-ha.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/catalina-ssi.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/catalina-storeconfig.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/catalina-tribes.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/catalina.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/ecj-4.17.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/el-api.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/jasper-el.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/jasper.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/jaspic-api.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/jsp-api.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/servlet-api.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/tomcat-api.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/tomcat-coyote.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/tomcat-dbcp.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/tomcat-i18n-cs.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/tomcat-i18n-de.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/tomcat-i18n-es.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/tomcat-i18n-fr.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/tomcat-i18n-ja.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/tomcat-i18n-ko.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/tomcat-i18n-pt-BR.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/tomcat-i18n-ru.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/tomcat-i18n-zh-CN.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/tomcat-jdbc.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/tomcat-jni.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/tomcat-util-scan.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/tomcat-util.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/tomcat-websocket.jar"/>
+        <pathelement location="../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/websocket-api.jar"/>
+    </path>
     <path id="BookshopOnlineLoginCase.classpath">
         <pathelement location="target/classes"/>
         <path refid="Maven Dependencies.libraryclasspath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+        <path refid="Apache Tomcat v9.0 [Apache Tomcat v9.0].libraryclasspath"/>
     </path>
     <path id="run.Main (8).classpath">
+        <path refid="BookshopOnlineLoginCase.classpath"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <path id="run.Test.classpath">
+        <path refid="BookshopOnlineLoginCase.classpath"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <path id="run.bso.test.classpath">
+        <path refid="BookshopOnlineLoginCase.classpath"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <path id="run.bso.test (1).classpath">
+        <path refid="BookshopOnlineLoginCase.classpath"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <path id="run.com.example.test.classpath">
+        <path refid="BookshopOnlineLoginCase.classpath"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <path id="run.BookshopOnlineLoginCase (1).classpath">
+        <path refid="BookshopOnlineLoginCase.classpath"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <path id="run.java.bso.test.classpath">
+        <path refid="BookshopOnlineLoginCase.classpath"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <path id="run.com.example.test (1).classpath">
+        <path refid="BookshopOnlineLoginCase.classpath"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <path id="run.java (2).classpath">
+        <path refid="BookshopOnlineLoginCase.classpath"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <path id="run.TestControllerRegister.classpath">
         <path refid="BookshopOnlineLoginCase.classpath"/>
         <path refid="Maven Dependencies.libraryclasspath"/>
     </path>
@@ -48,7 +137,7 @@
             </fileset>
         </copy>
         <copy includeemptydirs="false" todir="target/classes">
-            <fileset dir="Test">
+            <fileset dir="java">
                 <exclude name="**/*.launch"/>
                 <exclude name="**/*.xtend"/>
                 <exclude name="**/*.java"/>
@@ -65,7 +154,7 @@
         <echo message="${ant.project.name}: ${ant.file}"/>
         <javac debug="true" debuglevel="${debuglevel}" destdir="target/classes" includeantruntime="false" source="${source}" target="${target}">
             <src path="src"/>
-            <src path="Test"/>
+            <src path="java"/>
             <classpath refid="BookshopOnlineLoginCase.classpath"/>
         </javac>
     </target>
@@ -87,5 +176,86 @@
         <java classname="bso.boundary.laptop.Main" failonerror="true" fork="yes">
             <classpath refid="run.Main (8).classpath"/>
         </java>
+    </target>
+    <target name="Test">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.Test.classpath"/>
+        </junit>
+    </target>
+    <target name="bso.test">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.bso.test.classpath"/>
+        </junit>
+    </target>
+    <target name="bso.test (1)">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.bso.test (1).classpath"/>
+        </junit>
+    </target>
+    <target name="com.example.test">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.com.example.test.classpath"/>
+        </junit>
+    </target>
+    <target name="BookshopOnlineLoginCase (1)">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.BookshopOnlineLoginCase (1).classpath"/>
+        </junit>
+    </target>
+    <target name="java.bso.test">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.java.bso.test.classpath"/>
+        </junit>
+    </target>
+    <target name="com.example.test (1)">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.com.example.test (1).classpath"/>
+        </junit>
+    </target>
+    <target name="java (2)">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.java (2).classpath"/>
+        </junit>
+    </target>
+    <target name="TestControllerRegister">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="com.example.test.TestControllerRegister" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.TestControllerRegister.classpath"/>
+        </junit>
+    </target>
+    <target name="junitreport">
+        <junitreport todir="${junit.output.dir}">
+            <fileset dir="${junit.output.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${junit.output.dir}"/>
+        </junitreport>
     </target>
 </project>

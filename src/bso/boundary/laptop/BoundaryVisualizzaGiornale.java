@@ -113,17 +113,13 @@ import javafx.fxml.FXML;
 		public void initialize(URL location, ResourceBundle resources) {
 			i = CVG.getID();
 			
-			try {
-				LabelTitolo.setText(CVG.getData(i).getTitolo());
-				LabelEditore.setText(CVG.getData(i).getEditore());
-				LabelLingua.setText(CVG.getData(i).getLingua());
-				LabelDate.setText(""+CVG.getData(i).getDataPubb());
-				LabelDisp.setText(""+CVG.getData(i).getDisponibilita());
-				LabelPrezzo.setText(CVG.getData(i).getPrezzo()+"");
-				LabelCopieRimanenti.setText(CVG.getData(i).getCopieRimanenti()+"");
-			} catch (SQLException e) {
-				
-			}
+			LabelTitolo.setText(CVG.getData(i).getTitolo());
+			LabelEditore.setText(CVG.getData(i).getEditore());
+			LabelLingua.setText(CVG.getData(i).getLingua());
+			LabelDate.setText(""+CVG.getData(i).getDataPubb());
+			LabelDisp.setText(""+CVG.getData(i).getDisponibilita());
+			LabelPrezzo.setText(CVG.getData(i).getPrezzo()+"");
+			LabelCopieRimanenti.setText(CVG.getData(i).getCopieRimanenti()+"");
 			
 
 		}

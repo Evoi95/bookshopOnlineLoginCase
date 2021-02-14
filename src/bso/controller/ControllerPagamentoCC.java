@@ -65,7 +65,7 @@ public class ControllerPagamentoCC {
 		try {
 			cc = new CartaCredito(n, c, cod, (Date) data, civ, 0);
 			
-			System.out.println("\n\n\t CC: \n\n"+cc.getAmmontare());
+			bso.log.Log.logger.info("\n\n\t CC: \n\n"+cc.getAmmontare());
 
 			cc.setPrezzoTransazine(cDao.prendiSpesa());
 			cDao.insCC(cc);
@@ -85,7 +85,7 @@ public class ControllerPagamentoCC {
 
 	public ObservableList<CartaCredito> ritornaElencoCC(String nomeU) throws SQLException {
 		
-		// System.out.println("Chiamata nel controller :"+cDao.getCarteCredito(nomeU));
+		// bso.log.Log.logger.info("Chiamata nel controller :"+cDao.getCarteCredito(nomeU));
 		return cDao.getCarteCredito(nomeU);
 	}
 	

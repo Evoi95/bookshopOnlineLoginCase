@@ -27,9 +27,15 @@
         <pathelement location="../../.m2/repository/org/openjfx/javafx-fxml/11.0.2/javafx-fxml-11.0.2-win.jar"/>
         <pathelement location="../../.m2/repository/org/mybatis/mybatis/3.4.5/mybatis-3.4.5.jar"/>
         <pathelement location="../../.m2/repository/com/itextpdf/itextpdf/5.5.9/itextpdf-5.5.9.jar"/>
+        <pathelement location="../../.m2/repository/mysql/mysql-connector-java/8.0.22/mysql-connector-java-8.0.22.jar"/>
+        <pathelement location="../../.m2/repository/com/google/protobuf/protobuf-java/3.11.4/protobuf-java-3.11.4.jar"/>
     </path>
     <path id="BookshopOnlineLoginCase.classpath">
         <pathelement location="target/classes"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <path id="run.Main (8).classpath">
+        <path refid="BookshopOnlineLoginCase.classpath"/>
         <path refid="Maven Dependencies.libraryclasspath"/>
     </path>
     <target name="init">
@@ -76,5 +82,10 @@
     <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
+    </target>
+    <target name="Main (8)">
+        <java classname="bso.boundary.laptop.Main" failonerror="true" fork="yes">
+            <classpath refid="run.Main (8).classpath"/>
+        </java>
     </target>
 </project>

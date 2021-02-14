@@ -112,11 +112,11 @@ public class RivistaDao {
 		 finally {
 			 prepQ.close();
 			 conn.close();
-			 System.out.println("Ho chiuso tutto");
+			 bso.log.Log.logger.info("Ho chiuso tutto");
 			 
 		 }
 
-		 System.out.println("LibroDao. questy");
+		 bso.log.Log.logger.info("LibroDao. questy");
 
 		}
 
@@ -139,11 +139,11 @@ public class RivistaDao {
 		 finally {
 			 prepQ.close();
 			 conn.close();
-			 System.out.println("Ho chiuso tutto");
+			 bso.log.Log.logger.info("Ho chiuso tutto");
 			 
 		 }
 
-		 System.out.println("LibroDao. privilegi");
+		 bso.log.Log.logger.info("LibroDao. privilegi");
 
 }
 	
@@ -159,24 +159,16 @@ public class RivistaDao {
            // int i=0;
             while(rs.next())
             {
-               // System.out.println("res :"+rs);
-
         		try {
 					catalogo.add(f.createRivista("rivista",rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getDate(7).toLocalDate(), rs.getInt(8),rs.getFloat(9),rs.getInt(10),rs.getInt(11)));
-					
-					//titolo,tipo,autore,lingua,editore,descrizione,dataPubb,disp,prezzo,copieRim,foto,id//rs=rs.next();
-					//System.out.println("res: "+rs[i]);
+
         		} catch (Exception e) {
 				 
 					
 				}
-        		//System.out.println("rivista nome"+rs.getString(1));
 
             }
-		//catalogo.add(new Libro("pippo","pluto","it","fantasy","8004163529","paperino","avventura",100,11,11,5252020,18,null,true));
-	
-			
-		System.out.println(catalogo);
+
 		return catalogo;
 		
 	}
@@ -193,24 +185,20 @@ public class RivistaDao {
            // int i=0;
             while(rs.next())
             {
-               // System.out.println("res :"+rs);
+               //
 
         		try {
 					catalogo.add(f.createRivista("rivista",rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getDate(7).toLocalDate(), rs.getInt(8),rs.getFloat(9),rs.getInt(10),rs.getInt(11)));
 					
 					//titolo,tipo,autore,lingua,editore,descrizione,dataPubb,disp,prezzo,copieRim,foto,id//rs=rs.next();
-					//System.out.println("res: "+rs[i]);
+					//bso.log.Log.logger.info("res: "+rs[i]);
         		} catch (Exception e) {
 				 
 					
 				}
-        		//System.out.println("rivista nome"+rs.getString(1));
 
             }
-		//catalogo.add(new Libro("pippo","pluto","it","fantasy","8004163529","paperino","avventura",100,11,11,5252020,18,null,true));
-	
-			
-		System.out.println(catalogo);
+		
 		return catalogo;
 		
 	}
@@ -293,7 +281,7 @@ public class RivistaDao {
         	return name;
         }
         else {
-        	System.out.println("non ho torvato un cazzo e ritorno null");
+        	bso.log.Log.logger.info("non ho torvato un cazzo e ritorno null");
             return null;
 
         }	
@@ -401,7 +389,6 @@ public class RivistaDao {
 
             }
 		
-		System.out.println(catalogo);
 		return catalogo;
 		
 	}
@@ -444,7 +431,7 @@ public class RivistaDao {
 				
 				prepQ.executeUpdate();
 				//conn.close();
-			 	System.out.println("Libro Inserito con successo");
+			 	bso.log.Log.logger.info("Libro Inserito con successo");
 			 	state= true; // true		 			 	
 			}
 			else {
@@ -482,7 +469,7 @@ public class RivistaDao {
 			
 		}
 		
-		System.out.println("Rivista cancellata : "+row);
+		bso.log.Log.logger.info("Rivista cancellata : "+row);
 
 		
 		
@@ -507,8 +494,6 @@ public class RivistaDao {
 				}
 
             }
-		
-		System.out.println(catalogo);
 		return catalogo;
 		
 	}
@@ -520,7 +505,7 @@ public class RivistaDao {
 			st=conn.createStatement();
 			query="USE ispw";
 			
-			//System.out.println("Titolo dopo use ispw:"+l.getTitolo());
+			//bso.log.Log.logger.info("Titolo dopo use ispw:"+l.getTitolo());
 
 			st.executeQuery(query);
 		 	String query="UPDATE `ispw`.`rivista`"
@@ -554,7 +539,7 @@ public class RivistaDao {
 			rowAffected = prepQ.executeUpdate();
 			prepQ.close();
 			
-            System.out.println(("Row affected "+ rowAffected));
+            bso.log.Log.logger.info(("Row affected "+ rowAffected));
 
 	 }	
 	

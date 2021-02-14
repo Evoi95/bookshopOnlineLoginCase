@@ -18,14 +18,14 @@ public class ControllerRicercaPage {
 		rD =new RivistaDao();
 		//singeltonSystemState.getIstance();
 		SingeltonSystemState.getIstance().setIsSearch(true);
-		System.out.println("vis nel costruttore"+SingeltonSystemState.getIstance());
+		bso.log.Log.logger.info("vis nel costruttore"+SingeltonSystemState.getIstance());
 		
 	}
 	
 	public ObservableList<Raccolta> cercaPerTipo (String S) throws SQLException
 	{
 		//3 if per i tipi 
-		System.out.println("Tipo e confronto :"+SingeltonSystemState.getIstance().getType().equals("libro"));
+		bso.log.Log.logger.info("Tipo e confronto :"+SingeltonSystemState.getIstance().getType().equals("libro"));
 		if(SingeltonSystemState.getIstance().getType().equals("libro"))
 		{
 			//serach in libro dao

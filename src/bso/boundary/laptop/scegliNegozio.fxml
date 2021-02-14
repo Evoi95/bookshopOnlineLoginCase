@@ -5,7 +5,7 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="268.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundary.laptop.BoundaryScegliNegozio">
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="268.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bso.boundary.laptop.BoundaryScegliNegozio">
    <children>
       <Label fx:id="labelL" layoutX="35.0" layoutY="32.0" prefHeight="41.0" prefWidth="285.0" text="Scegli uno dei negozi in cui effetuare il ritiro:" />
       <RadioButton fx:id="radio1" layoutX="35.0" layoutY="130.0" mnemonicParsing="false" />

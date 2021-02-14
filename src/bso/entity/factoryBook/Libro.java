@@ -173,9 +173,9 @@ public class Libro implements Raccolta {
 	      File file = new File("C:\\libriScaricati");
 	      boolean bool = file.mkdir();
 	      if(bool){
-	         System.out.println("Directory created successfully");
+	         bso.log.Log.logger.info("Directory created successfully");
 	      }else{
-	         System.out.println("Sorry could not create specified directory");
+	         bso.log.Log.logger.info("Sorry could not create specified directory");
 	      }
 	      
 	      
@@ -192,7 +192,7 @@ public class Libro implements Raccolta {
 					
 				}
 	        } catch (IllegalArgumentException iae) {
-	            System.out.println("File Not Found");
+	            bso.log.Log.logger.info("File Not Found");
 	        }
 	        	        	       		
 	}

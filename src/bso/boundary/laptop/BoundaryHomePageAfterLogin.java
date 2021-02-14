@@ -122,7 +122,7 @@ public class BoundaryHomePageAfterLogin {
 
 		stage.show();
 		
-		//System.out.println("Sto nel terzo caso d'urso lode");
+		//bso.log.Log.logger.info("Sto nel terzo caso d'urso lode");
 	}
 
 	// Usaiamo la Reflection!! no! 

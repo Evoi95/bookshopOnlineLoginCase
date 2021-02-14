@@ -9,7 +9,7 @@ import bso.database.UsersDao;
 
 public class ControllerBsoRegister {
 	private Boolean state=false;
-	private UsersDao Ud ;
+	private UsersDao uD ;
 	private User u=User.getInstance();
 
 	public Boolean registra(String n, String c, String email, String pwd, String pwdC, LocalDate LocalDate) throws SQLException {
@@ -18,7 +18,6 @@ public class ControllerBsoRegister {
 		u.setEmail(email);
 		u.setPassword(pwd);
 		u.setDataDiNascita(LocalDate);
-		//U = new User(email,pwd);
 		
 		if(checkData ( n,c,email,pwd,pwdC) )
 		{
@@ -27,16 +26,12 @@ public class ControllerBsoRegister {
 				// nuovo utente creo l'account
 				u.setNome(n);
 				u.setCognome(c);
-				//User.getInstance().setDataDiNascita(LocalDate);
-				//User U1 = new User( n,c,email,pwd,LocalDate);
 				
-				System.out.println("\n\n\ndata in controller"+u.getDataDiNascita());
-				state=Ud.createUser(u);
-				//state=true;
+				bso.log.Log.logger.info("\n\n\ndata in controller"+u.getDataDiNascita());
+				state=uD.createUser(u);
 			}
 			else if (UsersDao.checkUser(u) == 1 || UsersDao.checkUser(u) == -1)
 			{
-				// utente gia registrato o errore 
 				state = false;
 			}
 		}
@@ -49,16 +44,30 @@ public class ControllerBsoRegister {
 	
 	//le chiamo protected perchele uso nel controller stesso e basta 
 	public boolean checkData (String n, String c, String email, String pwd, String pwdC)
-	// controll  all data
 	{
-		if(checkEmail(email) && checkPassword(pwd,pwdC) && checkNomeCognome(n,c))
+		if(checkEmail(email))
 		{
-			return true;
+			if(checkPassword(pwd,pwdC))
+			{
+				if(checkNomeCognome(n,c))
+				{
+					state = true;
+				}
+				else 
+				{
+					state = false;
+				}
+			}
+			else 
+			{
+				state = false;
+			}
 		}
 		else 
 		{
-			return false;
+			state = false;
 		}
+		return state ;
 	}
 	
 	public boolean checkEmail(String email)
@@ -99,7 +108,7 @@ public class ControllerBsoRegister {
 	public ControllerBsoRegister()
 	{
 		//U.getInstance();
-		Ud=new UsersDao();
+		uD=new UsersDao();
 	}
 	
 	// TO DO: checkData o lo facciamo diretti in mysql

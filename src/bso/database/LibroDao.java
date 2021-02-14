@@ -131,11 +131,11 @@ public class LibroDao  {
 		 finally {
 			 stmt.close();
 			 conn.close();
-			 System.out.println("Ho chiuso tutto");
+			 bso.log.Log.logger.info("Ho chiuso tutto");
 			 
 		 }
 
-		 System.out.println("LibroDao. questy");
+		 bso.log.Log.logger.info("LibroDao. questy");
 
 		}
 	
@@ -159,11 +159,11 @@ public class LibroDao  {
 		 finally {
 			 stmt.close();
 			 conn.close();
-			 System.out.println("Ho chiuso tutto");
+			 bso.log.Log.logger.info("Ho chiuso tutto");
 			 
 		 }
 
-		 System.out.println("LibroDao. privilegi");
+		 bso.log.Log.logger.info("LibroDao. privilegi");
 
 }
 
@@ -187,7 +187,6 @@ public class LibroDao  {
 
             }
 		
-		System.out.println(catalogo);
 		return catalogo;
 		
 	}
@@ -212,7 +211,6 @@ public class LibroDao  {
 
             }
 		c.close();
-		System.out.println(catalogo);
 		return catalogo;
 		
 	}
@@ -230,7 +228,7 @@ public class LibroDao  {
         	return L;
         }
         else {
-        	System.out.println("non ho torvato un cazzo e ritorno null");
+        	bso.log.Log.logger.info("non ho torvato un cazzo e ritorno null");
             return L;
 
         }
@@ -361,7 +359,7 @@ public class LibroDao  {
 				prepQ.setInt(13,l.getCopieRim());
 				prepQ.executeUpdate();
 				//conn.close();
-			 	System.out.println("Libro Inserito con successo");
+			 	bso.log.Log.logger.info("Libro Inserito con successo");
 			 	state= true; // true		 			 	
 			}
 			else {
@@ -479,7 +477,7 @@ public class LibroDao  {
         	//return name;
         }
         else {
-        	System.out.println("non ho torvato un cazzo e ritorno null");
+        	bso.log.Log.logger.info("non ho torvato un cazzo e ritorno null");
             //return null;
         	name=null;
 
@@ -507,8 +505,6 @@ public class LibroDao  {
 				}
 
             }
-		
-		System.out.println(catalogo);
 		return catalogo;
 		
 	}
@@ -534,7 +530,7 @@ public class LibroDao  {
 			
 		}
 		
-		System.out.println("Libro cancellato : "+row);
+		bso.log.Log.logger.info("Libro cancellato : "+row);
 	}
 	
 	public ObservableList<Libro> getLibriSingoloById(Libro l) throws SQLException
@@ -556,32 +552,19 @@ public class LibroDao  {
 				}
 
             }
-		
-		System.out.println(catalogo);
 		return catalogo;
 		
 	}
 	
 	public void aggiornaLibro(Libro l) throws SQLException,NullPointerException
 	{
-		//PreparedStatement stmt=null;
-
+		
 		int rowAffected=0;
 		
-		
-			
-			System.out.println("IdLibro prima del try nel dao:"+l.getId());
-
-			
-		 	 
-
-				 conn = ConnToDb.generalConnection();
-				st=conn.createStatement();
-				query="USE ispw";
-				
-				System.out.println("Titolo dopo use ispw:"+l.getTitolo());
-
-				st.executeQuery(query);
+		conn = ConnToDb.generalConnection();
+		st=conn.createStatement();
+		query="USE ispw";
+        st.executeQuery(query);
 			 	String query=" UPDATE libro "
 			 			+ "SET "
 			 			+ " `titolo` =?,"
@@ -615,22 +598,9 @@ public class LibroDao  {
 				prepQ.setInt(12,l.getDisponibilita());
 				prepQ.setFloat(13,l.getPrezzo());
 				prepQ.setInt(14,l.getCopieRim());
-			//	prepQ.setInt(15,l.getId());
-
 	
 				rowAffected = prepQ.executeUpdate();
 				prepQ.close();
-				
-	            System.out.println(("Row affected "+ rowAffected));
-
-
-			 
-			 	
-			
-					
-
-	
-
 
 		 }	
 			
@@ -654,28 +624,18 @@ public class LibroDao  {
 		            b=new BufferedWriter (w);
 		            while(rs.next())
 		            {
-		        		try {
-		        	
-
-				
-								rs.getString(1);
-								rs.getInt(2);
-								rs.getFloat(3);
-										
-				
-		        		b.write("Titolo :"+rs.getString(1)+"\t"+"Ricavo totale :" +rs.getInt(2)*rs.getFloat(3)+"\n");
-
-
-
-
+		        		try
+		        		{
+		        		rs.getString(1);
+						rs.getInt(2);
+						rs.getFloat(3);
+						b.write("Titolo :"+rs.getString(1)+"\t"+"Ricavo totale :" +rs.getInt(2)*rs.getFloat(3)+"\n");
 		     			b.flush();
-
-
-		        			} catch (Exception e) {
-						 
-							
-						}
-		        		
+	        			}
+		        		catch (Exception e) 
+		        		{
+													
+		        		}
 		            }
 
 

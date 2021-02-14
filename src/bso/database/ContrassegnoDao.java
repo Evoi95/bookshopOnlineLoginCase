@@ -24,7 +24,7 @@ public class ContrassegnoDao {
  		String par4=f.getCom();
  		float par5=f.getAmmontare();
  		
- 		System.out.println(par1 + par2 + par3 + par4 + par5);
+ 		bso.log.Log.logger.info(par1 + par2 + par3 + par4 + par5);
        
 		 try {
 
@@ -49,7 +49,7 @@ public class ContrassegnoDao {
 
          }
 		 		 
-		 System.out.println("effettuo inserimento pagaentoDao");
+		 bso.log.Log.logger.info("effettuo inserimento pagaentoDao");
 				//return esito;
          
          
@@ -81,11 +81,11 @@ public class ContrassegnoDao {
 			 
 				
 			}
-			 System.out.println("Ho chiuso tutto");
+			 bso.log.Log.logger.info("Ho chiuso tutto");
 			 
 		 }
 
-		 System.out.println("PagamentoDao. privilegi");
+		 bso.log.Log.logger.info("PagamentoDao. privilegi");
 
 		}
 	
@@ -114,7 +114,7 @@ public class ContrassegnoDao {
 			}
 		}
 		
-		System.out.println("\n\n Spesa in cDao :"+spesa);
+		bso.log.Log.logger.info("\n\n Spesa in cDao :"+spesa);
 		return spesa;
 	}
 	

@@ -70,12 +70,12 @@ public class BoundaryBsoRegister implements Initializable {
 	@FXML
 	private void procedi() throws IOException, SQLException {
 		LocalDate data=calendarL.getValue();
-		System.out.println("Data "+data);
+		bso.log.Log.logger.info("Data "+data);
 		
 		if(cR.registra(nomeTF.getText(),cognomeTF.getText(),emailTF.getText(),passwordTF.getText(),passCheckTF.getText(),data)==true)
 		{
 
-			System.out.println("Data inserita in procedi : " + calendarL.getValue().toString());
+			bso.log.Log.logger.info("Data inserita in procedi : " + calendarL.getValue().toString());
 			Stage stage;
 			Parent root;
 			stage = (Stage) buttonReg.getScene().getWindow();

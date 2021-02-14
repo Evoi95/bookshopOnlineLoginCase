@@ -1,7 +1,7 @@
 package bso.controller;
 
 import java.sql.SQLException;
-
+import bso.log.Log;
 import bso.entity.users.singelton.*;
 import bso.database.UsersDao;
 
@@ -9,20 +9,18 @@ public class ControllerLogin {
 	
 	private static User user = User.getInstance();
 	private SingeltonSystemState vis = SingeltonSystemState.getIstance() ;
-	//private User tU=User.getInstance();
 
 	
 	public boolean controlla(String m, String p) throws SQLException
-	// M = Mail , P = pass prese dalla boundary grafica per il login
 	{
 		
 		boolean esito = false;
 		if (m.equals("Admin@Admin.com") && p.equals("Admin871") ) {
-			System.out.println("Accesso Scorciatoia da ADMIM ");
+			Log.logger.info("Accesso Scorciatoia da ADMIM ");
 			esito = true;
 			}
 		else if (m.equals("bigHand@gmail.com") && p.equals("bigHand97")){
-			System.out.println("Accesso autorizzato ");
+			Log.logger.info("Accesso autorizzato ");
 			esito = true;
 			
 			}
@@ -44,7 +42,7 @@ public class ControllerLogin {
 				String r =UsersDao.getRuolo(user);
 				// predno e li assegno all'oggetto user
 				UsersDao.pickData(user);
-				System.out.println("\n loggato come :" + r);
+				bso.log.Log.logger.info("\n loggato come :" + r);
 				vis.getIstance().setIsLogged(true);
 				return esito = true;
 			}
@@ -52,7 +50,7 @@ public class ControllerLogin {
 			{
 				return esito; // false non registrato
 			}
-			System.out.println("Errore nelle credenziali");
+			bso.log.Log.logger.info("Errore nelle credenziali");
 			return esito;
 
 		}
@@ -61,10 +59,10 @@ public class ControllerLogin {
 	
 	public String getRuoloTempUSer(String email)
 	{
-		System.out.println(" sto nwl controller");
+		bso.log.Log.logger.info(" sto nwl controller");
 		String ruolo;
 		user.setEmail(email);
-		System.out.println("USer.getInstance.setEmail "+user.getEmail());
+		bso.log.Log.logger.info("USer.getInstance.setEmail "+user.getEmail());
 		 ruolo= UsersDao.getRuolo(user);
 		 return ruolo;
 		

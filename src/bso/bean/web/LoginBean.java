@@ -1,5 +1,5 @@
 package bso.bean.web;
 
-public class acquistaBean {
+public class LoginBean {
 
 }

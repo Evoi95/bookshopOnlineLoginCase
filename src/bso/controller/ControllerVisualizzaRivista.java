@@ -8,8 +8,7 @@ import bso.database.RivistaDao;
 public class ControllerVisualizzaRivista {
 	
 	private RivistaDao rD;
-	private Rivista R;
-	private int tempIdMag;
+	private Rivista r;
 	private static SingeltonSystemState vis = SingeltonSystemState.getIstance() ;
 	
 	public ControllerVisualizzaRivista()
@@ -18,19 +17,21 @@ public class ControllerVisualizzaRivista {
 	}
 	public void setID(String i)
 	{		
-		tempIdMag = Integer.parseInt(i) ;
-		vis.setId(tempIdMag);
+		vis.setId(Integer.parseInt(i));
 	}
 	public int getID()
 	{
-		System.out.println(vis.getId());
 		return vis.getId();
 	}
-	public Rivista getData(int i) throws SQLException
+	public Rivista getData(int i) 
 	{
-		// imposto che è un libro nel controller
 		vis.setTypeAsMagazine();
-		return  rD.getRivista(R,i);
-		//return L;
+		try {
+			return  rD.getRivista(r,i);
+		} catch (SQLException e) {
+			
+			return null;
+		}
+		
 	}
 }

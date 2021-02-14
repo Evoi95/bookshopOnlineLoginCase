@@ -41,8 +41,8 @@ public class CartaCreditoDao {
             	
 
         		try {             
-        		//	System.out.println("Stringhe : "+n+cog+cod);
-        			// System.out.println("res :"+rs.getString(1));
+        		//	bso.log.Log.logger.info("Stringhe : "+n+cog+cod);
+        			// bso.log.Log.logger.info("res :"+rs.getString(1));
 
 					catalogo.add(new CartaCredito(n,cog,cod, null, cod,0));
 					//rs=rs.next();
@@ -91,11 +91,11 @@ public class CartaCreditoDao {
 		 finally {
 			// stmt.close();
 			 conn.close();
-			// System.out.println("Ho chiuso tutto");
+			// bso.log.Log.logger.info("Ho chiuso tutto");
 			 
 		 }
 
-		 System.out.println("LibroDao. privilegi");
+		 bso.log.Log.logger.info("LibroDao. privilegi");
 
 	}
 	public void insCC(CartaCredito cc) throws SQLException
@@ -105,14 +105,14 @@ public class CartaCreditoDao {
 		//Connection conn = null;
 		
 		
-		System.out.println("\t\tEntro in ins cc");
+		bso.log.Log.logger.info("\t\tEntro in ins cc");
 		String n=cc.getUserNome();
 		 String c=cc.getUserCognome();
 		 String num=cc.getNumeroCC();
 		 Date d=cc.getScadenza();
 		 String pin=cc.getCiv();
 		 Float amm=(float) cc.getPrezzoTransazine();		 
-		// System.out.println("Entro in ins cc"+cc.getUserNome());
+		// bso.log.Log.logger.info("Entro in ins cc"+cc.getUserNome());
 		 try {
 			 conn=ConnToDb.generalConnection();
 			 query="insert into cartacredito (nomeP,cognomeP,codiceCarta,scad,codicePin,ammontare)  values(?,?,?,?,?,?)";
@@ -145,7 +145,7 @@ public class CartaCreditoDao {
 		 finally {conn.close();}
 		
 		
-		 System.out.println("LibroDao. questy");
+		 bso.log.Log.logger.info("LibroDao. questy");
 
 		}
 	
@@ -166,7 +166,7 @@ public class CartaCreditoDao {
 			e.getCause();
 		}
 		
-		System.out.println("\n\n Spesa in cDao :"+spesa);
+		bso.log.Log.logger.info("\n\n Spesa in cDao :"+spesa);
 		return spesa;
 	}
 	  

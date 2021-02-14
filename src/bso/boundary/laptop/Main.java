@@ -2,7 +2,8 @@ package bso.boundary.laptop;
 
 import java.io.FileNotFoundException;
 import java.sql.SQLException;
-
+import java.util.logging.Logger; 
+  
 import bso.database.CreateDefaultDB;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +12,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 
 public class Main extends Application {
+	public static final Logger logger = Logger.getLogger( Logger.GLOBAL_LOGGER_NAME );
+	
 	@Override
 	public void start(Stage primaryStage) {
 
@@ -21,26 +24,24 @@ public class Main extends Application {
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch (Exception e) {
-			
+	        logger.warning("Error in launch HomePage :\n"+e); 	
+
 		}
 
 	}
 
 	public static void main(String[] args) {
-
+		
 		try {
 			CreateDefaultDB.createDefaultDB();
-		} catch (ClassNotFoundException e) {
-		 
+			logger.info("START PROGRAM");
 			
-		} catch (FileNotFoundException e) {
-		 
-			
-		} catch (SQLException e) {
-			
-		}
+		} catch (ClassNotFoundException | FileNotFoundException | SQLException e) {
+			 
+	        logger.warning("Error in main :\n"+e); 	
+		} 
 
-		launch(args);
+		Application.launch(args);
 
 	}
 }

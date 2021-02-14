@@ -75,7 +75,7 @@ public class PagamentoDao {
 			}
 		 }
 		
-		 System.out.println("LibroDao. privilegi");
+		 bso.log.Log.logger.info("LibroDao. privilegi");
 
 	}
 	
@@ -151,7 +151,7 @@ public ObservableList<Pagamento> getPagamenti()  {
 		
         while(rs.next())
         {
-           // System.out.println("res :"+rs);
+           // bso.log.Log.logger.info("res :"+rs);
 
     		try {
     			catalogo.add(new Pagamento (rs.getInt(1),rs.getString(2),rs.getInt(3),rs.getString(4),rs.getFloat(5),rs.getString(6),rs.getInt(7)));
@@ -173,9 +173,6 @@ public ObservableList<Pagamento> getPagamenti()  {
 			
 		}
 		}
-	
-
-	System.out.println(catalogo);
 	return catalogo;
 		}
 

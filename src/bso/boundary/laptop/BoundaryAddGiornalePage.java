@@ -1,8 +1,5 @@
 package bso.boundary.laptop;
 import java.io.IOException;
-import java.net.URL;
-import java.time.LocalDate;
-import java.util.ResourceBundle;
 
 import javafx.fxml.*;
 import javafx.scene.Parent;
@@ -10,7 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
-public class BoundaryAddGiornalePage implements Initializable  {
+public class BoundaryAddGiornalePage {
 	@FXML
 	private Pane pane;
 	@FXML
@@ -55,31 +52,6 @@ public class BoundaryAddGiornalePage implements Initializable  {
 	@FXML
 	private void conferma()
 	{
-		String t=titoloT.getText();
-		String tipo=tipologiaT.getText();
-		String ed=editoreT.getText();
-		String l=linguaT.getText();
-
-		LocalDate d=dataP.getValue();
-		boolean disp=disponibilitaC.isPressed();
-		
-		int dispo;
-		
-		if(disp==true)
-		{
-			dispo=1;
-			//disponibile
-		}
-		else {
-			dispo=0;
-		}
-		float prezzo=Float.parseFloat(prezzoT.getText());
-		int copie=Integer.parseInt(copieRimanentiT.getText());
-		
-		
-		
-		
-
 		
 	}
 	@FXML
@@ -97,10 +69,7 @@ public class BoundaryAddGiornalePage implements Initializable  {
 	}
 	
 	
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		
-	}
+
 	
 	
 	

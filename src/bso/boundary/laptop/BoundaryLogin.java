@@ -72,7 +72,7 @@ public class BoundaryLogin implements Initializable {
 		v=cL.controlla(u,p);
 		
 		 ruolo=cL.getRuoloTempUSer(textFieldUsername.getText());
-		System.out.println("Ruolo tempUser :"+ruolo);
+		bso.log.Log.logger.info("Ruolo tempUser :"+ruolo);
 
 		if (v) {
 		

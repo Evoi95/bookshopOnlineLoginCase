@@ -37,7 +37,7 @@ public class UsersDao  {
     {
     	boolean state=false;
     	LocalDate d=U.getDataDiNascita();
-    	System.out.println("\nD vale : "+d);
+    	bso.log.Log.logger.info("\nD vale : "+d);
     	
     	try 
 		{
@@ -62,13 +62,13 @@ public class UsersDao  {
 				prepQ.setString(3,User.getInstance().getEmail());
 		 		prepQ.setString(4, User.getInstance().getPassword());
 		 		
-		 		//System.out.println("\n\n\nData \n"+User.getInstance().getDataDiNascita());
+		 		//bso.log.Log.logger.info("\n\n\nData \n"+User.getInstance().getDataDiNascita());
 		 		// alternativa NO se rompe tutto se passi un oggetto di tipo data java lui
 		 		// vuole un oggetto di tipo data sql 
 				prepQ.setDate(5, java.sql.Date.valueOf(d));  
 				prepQ.executeUpdate();
 				//conn.close();
-			 	System.out.println("utente Inserito con successo");
+			 	bso.log.Log.logger.info("utente Inserito con successo");
 			 	state= true; // true		 			 	
 			}
 			else {
@@ -93,7 +93,7 @@ public class UsersDao  {
     public boolean createUser2(TempUser Ut) throws SQLException
     {
     	
-    	//System.out.println("Data in create User2:"+Ut.getDataDiNascita());
+    	//bso.log.Log.logger.info("Data in create User2:"+Ut.getDataDiNascita());
     	LocalDate d=Ut.getDataDiNascita();
     	boolean state=false;
     	try 
@@ -126,7 +126,7 @@ public class UsersDao  {
 				//prepQ.setString(7,U.getInstance())
 				prepQ.executeUpdate();
 				//conn.close();
-			 	System.out.println("utente Inserito con successo");
+			 	bso.log.Log.logger.info("utente Inserito con successo");
 			 	state= true; // true		 			 	
 			}
 			else {
@@ -151,7 +151,7 @@ public class UsersDao  {
     	// anche se lo tratto come boolean
     	String email = U.getEmail();
     	
-    	System.out.println("\n\n\n\tEmail in check user :"+email);
+    	bso.log.Log.logger.info("\n\n\n\tEmail in check user :"+email);
     	int id;
 
     	try 
@@ -171,7 +171,7 @@ public class UsersDao  {
 			 		
 			 		if(id>0)
 			 		{
-			 			System.out.println("utente già registarto");
+			 			bso.log.Log.logger.info("utente già registarto");
 			 			return 1;
 			 	}
 			 	else
@@ -212,7 +212,7 @@ public class UsersDao  {
 			 	if(rs.next())
 			 	{
 				 	conn.close();				 	
-			 		System.out.println("utente già registarto");
+			 		bso.log.Log.logger.info("utente già registarto");
 			 		return 1; // true
 			 		// account al ready exists
 			 	}
@@ -234,10 +234,9 @@ public class UsersDao  {
      
     public static String getRuolo (User U)
     {
-    	//String r = null ;
 
     	String email = U.getEmail();
-    	System.out.println("Email:"+email);
+    	bso.log.Log.logger.info("Email:"+email);
     	try 
 		{
 			if (ConnToDb.connection())
@@ -253,12 +252,12 @@ public class UsersDao  {
 			 		r =rs.getString(1);
 			 		User.getInstance().setIdRuolo(r);
 				 	conn.close();				 	
-			 		System.out.println("Ruolo utente : "+r);
+			 		bso.log.Log.logger.info("Ruolo utente : "+r);
 			 		//return r; // true
 			 	}
 			 	else
 			 	{
-				 	//conn.close();				 	
+				 		 	
 			 		return null; // Errore
 			 	}
 
@@ -285,7 +284,7 @@ public class UsersDao  {
     public static boolean checkResetpass (User U, String pwd,String email )
     {
     	//String email = U.getEmail();
-    	System.out.println("Email : "+email);
+    	bso.log.Log.logger.info("Email : "+email);
     	try 
 		{
 			if (ConnToDb.connection())
@@ -321,13 +320,11 @@ public class UsersDao  {
     	else if(r.contentEquals("A"))
     	{
     		Admin A = new Admin(U);
-    		System.out.println(A);
     		return A;
     	}
     	else if(r.contentEquals("E"))
     	{
     		Editore E = new Editore(U);
-    		System.out.println(E);
 
     		return E;
    		
@@ -335,7 +332,6 @@ public class UsersDao  {
     	else if(r.contentEquals("W"))
     	{
     		Scrittore W = new Scrittore(U);
-    		System.out.println(W);
     		return W;
     	}
 	return null;
@@ -450,7 +446,7 @@ public class UsersDao  {
 			 		U.setDataDiNascita(rs.getDate(6).toLocalDate());
 			 				 		
 			 	//	sono delle print messe per controllo 
-			 	//	System.out.println("U: "+U+"\n Con i campi :\n Cognome "
+			 	//	bso.log.Log.logger.info("U: "+U+"\n Con i campi :\n Cognome "
 			 	//			+ U.getCognome() + "\n email " + U .getEmail() + "\n ");
 			 		return U ;
 			 		 // true
@@ -618,7 +614,7 @@ public class UsersDao  {
 		 				 		
 		 		conn.close();	
 		 	//	sono delle print messe per controllo 
-		 	//	System.out.println("U: "+U+"\n Con i campi :\n Cognome "
+		 	//	bso.log.Log.logger.info("U: "+U+"\n Con i campi :\n Cognome "
 		 	//	 ;
 		 		 // true
 		 		// account already exists
@@ -878,7 +874,7 @@ public class UsersDao  {
 		 				 		
 		 		conn.close();	
 		 	//	sono delle print messe per controllo 
-		 	//	System.out.println("U: "+U+"\n Con i campi :\n Cognome "
+		 	//	bso.log.Log.logger.info("U: "+U+"\n Con i campi :\n Cognome "
 		 	//	 ;
 		 		 // true
 		 		// account already exists
@@ -1005,7 +1001,7 @@ public class UsersDao  {
 
 	    	String email =User.getInstance().getEmail();
 	    	
-	    	System.out.println("Emal dell caz :"+email);
+	    	bso.log.Log.logger.info("Emal dell caz :"+email);
 	    	try 
 			{
 				if (ConnToDb.connection())
@@ -1020,7 +1016,7 @@ public class UsersDao  {
 				 	{
 				 		r =rs.getString(1);
 				 		TempUser.getInstance().setIdRuolo(r);
-				 		System.out.println("Ruolo utente in dao : "+r);
+				 		bso.log.Log.logger.info("Ruolo utente in dao : "+r);
 				 	}
 				 	
 				}
@@ -1109,8 +1105,8 @@ public class UsersDao  {
 	{
 		int id=TempUser.getInstance().getIdU();
 		
-		System.out.println("Id passato nel dao di tempUser :"+TempUser.getInstance().getIdU());
-		System.out.println("Id passato nel dao di singletonBattona :"+SingeltonSystemState.getIstance().getId());
+		bso.log.Log.logger.info("Id passato nel dao di tempUser :"+TempUser.getInstance().getIdU());
+		bso.log.Log.logger.info("Id passato nel dao di singletonBattona :"+SingeltonSystemState.getIstance().getId());
 		
 		
 		
@@ -1136,7 +1132,7 @@ public class UsersDao  {
             	Ut.setDescrizione(rs.getString(7));
             	Ut.setDataDiNascita(rs.getDate(8).toLocalDate());
             	
-            	System.out.println("Nel while del dao :"+rs.getString(2));//u.getInstance().getIdU());
+            	bso.log.Log.logger.info("Nel while del dao :"+rs.getString(2));//u.getInstance().getIdU());
 
             }
             
@@ -1186,7 +1182,7 @@ public class UsersDao  {
 		 				 		
 		 		conn.close();	
 		 	//	sono delle print messe per controllo 
-		 	//	System.out.println("U: "+U+"\n Con i campi :\n Cognome "
+		 	//	bso.log.Log.logger.info("U: "+U+"\n Con i campi :\n Cognome "
 		 	//	 ;
 		 		 // true
 		 		// account already exists
@@ -1227,7 +1223,7 @@ public class UsersDao  {
 		 		prepQ.setString(4, TempUser.getInstance().getPassword());
 		 		prepQ.setDate(5, java.sql.Date.valueOf(TempUser.getInstance().getDataDiNascita().toString()));  
 				prepQ.executeUpdate();
-				System.out.println("utente Inserito da admin con successo");
+				bso.log.Log.logger.info("utente Inserito da admin con successo");
 			 	state= true; // true		 			 	
 			}
 			else {
@@ -1255,7 +1251,7 @@ public class UsersDao  {
 	          {
 	        	  max=rs.getInt(1);
 	          }
-		System.out.println("Max in dao "+max);
+		bso.log.Log.logger.info("Max in dao "+max);
 		return max;
 }
 	
@@ -1299,7 +1295,7 @@ public class UsersDao  {
 		 				 		
 		 		conn.close();	
 		 	//	sono delle print messe per controllo 
-		 	//	System.out.println("U: "+U+"\n Con i campi :\n Cognome "
+		 	//	bso.log.Log.logger.info("U: "+U+"\n Con i campi :\n Cognome "
 		 	//	 ;
 		 		 // true
 		 		// account already exists

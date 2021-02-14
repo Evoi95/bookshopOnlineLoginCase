@@ -184,7 +184,7 @@ public class BoundaryScegliNegozio implements Initializable {
 		        if ((result.isPresent()) && (result.get() == ButtonType.OK))
 		        	
 		        {
-		            System.out.println("ALL OK..!");
+		            bso.log.Log.logger.info("ALL OK..!");
 		            if(SingeltonSystemState.getIstance().getIsLogged())	
 					{
 		            	Stage stage;
@@ -197,7 +197,7 @@ public class BoundaryScegliNegozio implements Initializable {
 		                stage.show();
 		            }
 		            else {
-		            	System.out.println("Sto in else");
+		            	bso.log.Log.logger.info("Sto in else");
 		            	Stage stage;
 		                Parent root;
 		                stage = (Stage) buttonV.getScene().getWindow();
@@ -240,7 +240,7 @@ public class BoundaryScegliNegozio implements Initializable {
 		        if ((result.isPresent()) && (result.get() == ButtonType.OK))
 		        	
 		        {
-		            System.out.println("ALL OK..!");
+		            bso.log.Log.logger.info("ALL OK..!");
 		            if(SingeltonSystemState.getIstance().getIsLogged())	
 					{
 		            	Stage stage;
@@ -253,7 +253,7 @@ public class BoundaryScegliNegozio implements Initializable {
 		                stage.show();
 		            }
 		            else {
-		            	System.out.println("Sto in else");
+		            	bso.log.Log.logger.info("Sto in else");
 		            	Stage stage;
 		                Parent root;
 		                stage = (Stage) buttonV.getScene().getWindow();

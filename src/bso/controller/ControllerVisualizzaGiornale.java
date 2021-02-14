@@ -1,6 +1,5 @@
 package bso.controller;
 
-import java.sql.SQLException;
 
 import bso.entity.factoryBook.Giornale;
 import bso.database.GiornaleDao;
@@ -11,8 +10,6 @@ public class ControllerVisualizzaGiornale {
 	
 	private GiornaleDao gD;
 	private Giornale g;
-	private int tempIdGior;
-	private SingeltonSystemState vis = SingeltonSystemState.getIstance() ;
 	
 	public ControllerVisualizzaGiornale()
 	{
@@ -21,20 +18,16 @@ public class ControllerVisualizzaGiornale {
 	
 	public void setID(String i)
 	{		
-		tempIdGior = Integer.parseInt(i) ;
-		vis.getIstance().setId(tempIdGior);
+		SingeltonSystemState.getIstance().setId(Integer.parseInt(i));
 	}
 	public int getID()
 	{
-		System.out.println(vis.getIstance().getId());
-		return vis.getIstance().getId();
+		return SingeltonSystemState.getIstance().getId();
 	}
-	public Giornale getData(int i) throws SQLException
+	public Giornale getData(int i)
 	{
-		// imposto che è un giornale nel controller
-		vis.getIstance().setTypeAsDaily();
+		SingeltonSystemState.getIstance().setTypeAsDaily();
 		return  gD.getGiornale(g,i);
-		//return L;
 	}
 
 }

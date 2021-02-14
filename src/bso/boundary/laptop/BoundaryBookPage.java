@@ -28,7 +28,7 @@ public class BoundaryBookPage implements Initializable {
 	@FXML
 	private Label header;
 	@FXML
-	private TableView<Libro> table = new TableView<Libro>();
+	private TableView<Libro> table = new TableView<>(); 
 	@FXML
 	private TableColumn<Libro, SimpleStringProperty> titolo = new TableColumn<>("Titolo");
 	@FXML
@@ -54,7 +54,6 @@ public class BoundaryBookPage implements Initializable {
 	@FXML
 	private Button buttonGL;
 	private ControllerBookPage cBP;
-	private SingeltonSystemState vis=SingeltonSystemState.getIstance();
 	@FXML
 	private void aggiungi() throws IOException 
 	{	
@@ -85,13 +84,9 @@ public class BoundaryBookPage implements Initializable {
 	}
 	
 	@FXML
-	private void cancella() throws IOException
+	private void cancella() 
 	{
-		int id;
-		id=vis.getIstance().getId();
-		// come nella modifica si apre una schemrata che chiedi il codice del libro da modiciare
-		// inserito quel codice io posso clicare ok o indietro
-		// se clicco ok allora apro la pagina di modifica altrimenti niente
+		bso.log.Log.logger.info("Hai CLiccato su cancella");
 		
 	}
 	
@@ -116,7 +111,7 @@ public class BoundaryBookPage implements Initializable {
 	
 	@FXML
 	private void pippo() {
-		vis.getIstance().setId(table.getSelectionModel().getSelectedItem().getId());
+		SingeltonSystemState.getIstance().setId(table.getSelectionModel().getSelectedItem().getId());
 	}
 	
 	@Override

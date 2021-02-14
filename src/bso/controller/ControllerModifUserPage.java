@@ -21,7 +21,7 @@ public class ControllerModifUserPage {
 
 
 	public TempUser prendiLista(int id) throws SQLException {
-		System.out.println("id in controllerMUP :"+ id);
+		bso.log.Log.logger.info("id in controllerMUP :"+ id);
 		
 		uT.setIdU(id);
 		

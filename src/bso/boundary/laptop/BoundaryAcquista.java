@@ -183,14 +183,17 @@ public class BoundaryAcquista implements Initializable {
 		
 		buttonCC.setDisable(true);
 		buttonCash.setDisable(true);
-		try {
+		try 
+		{
 			nome.setText(cA.getNomeById());
 			dispLabel.setText(""+cA.getDisp());
+		}
+		catch (SQLException e)
+		{
 			
-		} catch (SQLException e) {
-		 
-			
-		} 
+		}
+		
+		
 	}
 
 }

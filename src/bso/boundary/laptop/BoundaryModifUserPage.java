@@ -120,7 +120,7 @@ public class BoundaryModifUserPage implements Initializable{
 		// query con id
 		cMUP=new ControllerModifUserPage();
 		int id=SingeltonSystemState.getIstance().getId();
-		System.out.println("id in initialize bMUP :"+ id);
+		bso.log.Log.logger.info("id in initialize bMUP :"+ id);
 		
 		try {
 			cMUP.prendiLista(id);

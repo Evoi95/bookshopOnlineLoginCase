@@ -18,7 +18,7 @@ public class ControllerPagamentoCash {
 			pD.daiPrivilegi();
 			pagD.daiPrivilegi();
 
-			System.out.println("\n\n");
+			bso.log.Log.logger.info("\n\n");
 			f.setNome(nome);
 			f.setCognome(cognome);
 			f.setVia(via);

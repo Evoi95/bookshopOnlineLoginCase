@@ -51,7 +51,7 @@ public class BoundaryDownload implements Initializable {
 		 if ((result.isPresent()) && (result.get() == ButtonType.OK))
 	        	
 	        {
-	            System.out.println("ALL OK..!");
+	            bso.log.Log.logger.info("ALL OK..!");
 	            if(vis.getIstance().getIsLogged())	
 				{
 	            	CD.scaricaLibro();

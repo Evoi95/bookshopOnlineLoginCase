@@ -34,7 +34,7 @@ public class ControllerAcquista {
 			l.setDisponibilita(disp);
 			x = lD.getCosto(l);
 
-			System.out.println("ControllerAcquista");
+			bso.log.Log.logger.info("ControllerAcquista");
 			lD.aggiornaDisponibilita(l);
 			lD.aggiornaCopieVendute(l,disp);
 			
@@ -159,7 +159,7 @@ public class ControllerAcquista {
 	{
 		
 		String S = vis.getType();
-		System.out.println(S);
+		bso.log.Log.logger.info(S);
 		return S;
 	}
 

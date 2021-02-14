@@ -2,7 +2,6 @@ package bso.boundary.laptop;
 
 import java.io.IOException;
 import java.net.URL;
-import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
@@ -90,39 +89,9 @@ public class BoundaryAddBookPage implements Initializable {
 
 	@FXML
 	private void conferma()
-	{
-		
-		
-		String t=titoloT.getText();
-		int np=Integer.parseInt(numeroPagineT.getText());
-		String cod=codeIsbnT.getText();
-		String ed=editoreT.getText();
-		String a=autoreT.getText();
-		String l=linguaT.getText();
-		String c= categoriaList.getSelectionModel().getSelectedItem();
-
-		LocalDate d=dataP.getValue();
-		String r=recensioneT.getText();
-		String desc=descrizioneA.getText();
-		boolean disp=disponibilitaC.isPressed();
-		
-		int dispo;
-		
-		if(disp)
-		{
-			dispo=1;
-			//disponibile
-		}
-		else {
-			dispo=0;
-		}
-		float prezzo=Float.parseFloat(prezzoT.getText());
-		int copie=Integer.parseInt(copieRimanentiT.getText());
-		
-		System.out.println("Categoria scleta : "+c);
-		
-		System.out.println("dispo :"+dispo);
-		}
+	{	
+		bso.log.Log.logger.info("Conferma  aggiunta");
+	}
 	
 	@FXML
 	private void annulla() throws IOException
@@ -138,14 +107,11 @@ public class BoundaryAddBookPage implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-	
 		categoriaList.setItems(items);
 		items.add("horror");
 		items.add("thriller");
 		items.add("fantasy");
 		items.add("avventura");
-		
-		
 	}
 	
 			

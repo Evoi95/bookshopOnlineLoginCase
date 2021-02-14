@@ -103,7 +103,7 @@ public class BoundaryModifGiornale implements Initializable {
 		float prezzo=Float.parseFloat(prezzoT.getText());
 		int copie=Integer.parseInt(copieRimanentiT.getText());
 				
-		System.out.println("Esito : ");
+		bso.log.Log.logger.info("Esito : ");
 		
 		
 

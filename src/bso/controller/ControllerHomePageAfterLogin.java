@@ -15,12 +15,12 @@ public class ControllerHomePageAfterLogin {
 	{	
 		
 		String n = U.getNome();
-		System.out.println("Stai sloggando con il nome di : "+ n );
+		bso.log.Log.logger.info("Stai sloggando con il nome di : "+ n );
 		U.setNull();
 		
 		if(U.getEmail() == null && U.getIdRuolo() == null)
 		{
-			System.out.println("Logout  utente" + U.getEmail());
+			bso.log.Log.logger.info("Logout  utente" + U.getEmail());
 			vis.setIsLogged(false);
 			return true;
 		}

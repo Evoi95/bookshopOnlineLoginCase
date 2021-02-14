@@ -9,7 +9,6 @@ public class ControllerVisualizzaLibro {
 	
 	private LibroDao ld;
 	private Libro b;
-	private int tempIdLib;
 	private SingeltonSystemState vis = SingeltonSystemState.getIstance() ;
 	
 	public ControllerVisualizzaLibro()
@@ -18,19 +17,16 @@ public class ControllerVisualizzaLibro {
 	}
 	public void setID(String i)
 	{		
-		tempIdLib = Integer.parseInt(i) ;
-		vis.setId(tempIdLib);
+		vis.setId(Integer.parseInt(i));
 	}
 	public int getID()
 	{
-		System.out.println(vis.getId());
+		;
 		return vis.getId();
 	}
 	public Libro getData(int i) throws SQLException
 	{
-		// imposto che è un libro nel controller
 		vis.setTypeAsBook();
 		return  ld.getLibro(b,i);
-		//return L;
 	}
 }

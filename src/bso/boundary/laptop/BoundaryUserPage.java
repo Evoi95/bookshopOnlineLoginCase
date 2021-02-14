@@ -70,7 +70,7 @@ public class BoundaryUserPage implements Initializable {
 		int max = 0;
 		max=cMPU.prendiIdMax();
 		
-		System.out.println("Utenti massimi "+max);
+		bso.log.Log.logger.info("Utenti massimi "+max);
 
 		
 		if(Integer.parseInt(utenteTF.getText())<1)// && Integer.parseInt(utenteTF.getText())>max)
@@ -99,7 +99,7 @@ public class BoundaryUserPage implements Initializable {
 		else {
 			
 		
-		System.out.println("Id in BoundaryUserPage : "+vis.getIstance().getId());
+		bso.log.Log.logger.info("Id in BoundaryUserPage : "+vis.getIstance().getId());
 		Stage stage;
 		Parent root;
 		stage = (Stage) buttonM.getScene().getWindow();
@@ -140,7 +140,7 @@ public class BoundaryUserPage implements Initializable {
             elencoUtenti.appendText(line.concat("\n"));
             
 
-            System.out.println(line);
+            bso.log.Log.logger.info(line);
             line = reader.readLine();
         }
 		}

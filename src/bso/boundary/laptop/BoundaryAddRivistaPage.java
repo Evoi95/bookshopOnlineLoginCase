@@ -14,7 +14,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 
-public class BoundaryAddRivistaPage implements Initializable{
+public class BoundaryAddRivistaPage {
 	@FXML
 	private Pane pane;
 	@FXML
@@ -69,30 +69,7 @@ public class BoundaryAddRivistaPage implements Initializable{
 	@FXML
 	private void aggiungi()
 	{
-		int dispo;
-		String t=titoloTF.getText();
-		String tipologia=tipologiaTF.getText();
-		String a=autoreTF.getText();
-		String l=linguaTF.getText();
-		String ed=editoreTF.getText();
-		String desc=descTA.getText();
-		LocalDate data=datePick.getValue();
-
-		boolean disp=dispCheck.isPressed();
-		
-		
-		if(disp)
-		{
-			dispo=1;
-			//disponibile
-		}
-		else {
-			dispo=0;
-		}
-		float prezzo=Float.parseFloat(prezzoTF.getText());
-		int copie=Integer.parseInt(copieTF.getText());
-		
-		
+		bso.log.Log.logger.info("Hai cliccato su agiungi");
 	}
 	@FXML 
 	private void torna() throws IOException
@@ -106,10 +83,7 @@ public class BoundaryAddRivistaPage implements Initializable{
 		stage.show();
 	
 	}
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-			
-	}
+	
 	
 	
 	

@@ -38,21 +38,15 @@ public class PopulateDefaultDb {
 	
 	private static boolean createLibri() 
 	{
-		System.out.println("---------Chiamo stored insLibri---------\n\n");
+		bso.log.Log.logger.info("---------Chiamo stored insLibri---------\n\n");
 		try 
 		{
-			
 			conn=ConnToDb.generalConnection();
-			 ScriptRunner sr = new ScriptRunner(conn);
-			 
-			 //&& preso come terminatore-> eseguito;	
-			 sr.setSendFullScript(true);
-		      //Creating a reader object
-		      Reader reader = new BufferedReader(new FileReader("FileSql/storedInsLibri.sql"));
-		      //Running the script
-		      sr.runScript(reader);
-			
-
+			ScriptRunner sr = new ScriptRunner(conn);
+			sr.setSendFullScript(true);
+		    Reader reader = new BufferedReader(new FileReader("FileSql/storedInsLibri.sql"));
+		    //Running the script
+		    sr.runScript(reader);
 			return true;
 		}
 	
@@ -68,7 +62,7 @@ public class PopulateDefaultDb {
 
 	private static boolean createGiornale() throws FileNotFoundException
 	{
-		System.out.println("---------Chiamo stored insGiornali---------\n\n");
+		bso.log.Log.logger.info("---------Chiamo stored insGiornali---------\n\n");
 
 		try {
 			conn=ConnToDb.generalConnection();
@@ -94,7 +88,7 @@ public class PopulateDefaultDb {
 
 	private static boolean createRivista() throws FileNotFoundException
 	{
-	System.out.println("---------Chiamo stored insRiviste---------\n\n");
+	bso.log.Log.logger.info("---------Chiamo stored insRiviste---------\n\n");
 	try 
 	{
 		
@@ -124,7 +118,7 @@ public class PopulateDefaultDb {
 
 	private static boolean createUser()
 	{
-			System.out.println("---------Chiamo stored insUtenti---------\n\n");
+			bso.log.Log.logger.info("---------Chiamo stored insUtenti---------\n\n");
 
 			try {
 				conn=ConnToDb.generalConnection();
@@ -162,7 +156,7 @@ public class PopulateDefaultDb {
 	
 	private static boolean createNegozio()
 	{
-			System.out.println("---------Chiamo stored insNEgozi---------\n\n");
+			bso.log.Log.logger.info("---------Chiamo stored insNEgozi---------\n\n");
 
 			try {
 				conn=ConnToDb.generalConnection();

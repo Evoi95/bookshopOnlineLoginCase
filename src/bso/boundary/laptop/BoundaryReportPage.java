@@ -75,7 +75,7 @@ public class BoundaryReportPage implements Initializable {
             ta.appendText(line.concat("\n"));
             
 
-            System.out.println(line);
+            bso.log.Log.logger.info(line);
             line = readerL.readLine();
         }
 		} catch (FileNotFoundException e) {
@@ -104,7 +104,7 @@ public class BoundaryReportPage implements Initializable {
             ta.appendText(line1.concat("\n"));
             
 
-            System.out.println(line1);
+            bso.log.Log.logger.info(line1);
             line1 = readerG.readLine();
         }
 		} catch (IOException e) {
@@ -136,7 +136,7 @@ public class BoundaryReportPage implements Initializable {
             ta.appendText(line2.concat("\n"));
             
 
-            System.out.println(line2);
+            bso.log.Log.logger.info(line2);
             try {
 				line2 = reader.readLine();
 			} catch (IOException e) {
@@ -172,7 +172,7 @@ public class BoundaryReportPage implements Initializable {
             ta.appendText(line3.concat("\n"));
             
 
-            System.out.println(line3);
+            bso.log.Log.logger.info(line3);
             try {
 				line3 = reader3.readLine();
 			} catch (IOException e) {
@@ -215,7 +215,7 @@ public class BoundaryReportPage implements Initializable {
             ta.appendText(line.concat("\n"));
             
 
-            System.out.println(line);
+            bso.log.Log.logger.info(line);
             line = reader.readLine();
         }
         reader.close();
@@ -237,7 +237,7 @@ public class BoundaryReportPage implements Initializable {
             ta.appendText(line.concat("\n"));
             
 
-            System.out.println(line);
+            bso.log.Log.logger.info(line);
             line = readerL.readLine();
         }
         readerL.close();
@@ -248,7 +248,7 @@ public class BoundaryReportPage implements Initializable {
             ta.appendText(line1.concat("\n"));
             
 
-            System.out.println(line1);
+            bso.log.Log.logger.info(line1);
             line1 = readerG.readLine();
         }
         readerG.close();
@@ -259,7 +259,7 @@ public class BoundaryReportPage implements Initializable {
             ta.appendText(line2.concat("\n"));
             
 
-            System.out.println(line2);
+            bso.log.Log.logger.info(line2);
             line2 = reader.readLine();
         }
         reader.close();
@@ -283,7 +283,7 @@ public class BoundaryReportPage implements Initializable {
             ta.appendText(line.concat("\n"));
             
 
-            System.out.println(line);
+            bso.log.Log.logger.info(line);
             line = reader.readLine();
         }
         reader.close();
@@ -327,7 +327,7 @@ public class BoundaryReportPage implements Initializable {
             ta.appendText(line2.concat("\n"));
             
 
-            System.out.println(line2);
+            bso.log.Log.logger.info(line2);
             line2 = readerR.readLine();
         }
         readerR.close();

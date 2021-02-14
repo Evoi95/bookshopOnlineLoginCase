@@ -67,7 +67,7 @@ public class BoundaryCompravenditaRiviste implements Initializable {
 	@FXML
 	
 	private void vediListaRiviste() throws SQLException {
-		// System.out.println(CCR.getRivisteE());
+		// bso.log.Log.logger.info(CCR.getRivisteE());
 		table.setItems(CCR.getRiviste());
 	}
 

@@ -32,15 +32,14 @@ public class GiornaleDao {
 	private static Connection conn ;
 	private static int q ; 
 	private static ResultSet rs;
-	private String categoria;//=g.getTipologia();
+	private String categoria;
 
 	
- 	public void getDesc(bso.entity.factoryBook.Giornale g) 
+ 	public void getDesc(Giornale g) 
 	{	           
 		Connection conn = ConnToDb.generalConnection();
 
 		 try {
-	            //String url = "jdbc:msql://200.210.220.1:1114/Demo";
 	            Statement stmt = conn.createStatement();
 	            ResultSet rs;
 	 
@@ -55,8 +54,6 @@ public class GiornaleDao {
 	                int disp=rs.getInt("disp");
 
 	                float prezzo=rs.getFloat("prezzo");
-	               // InputStream img=rs.getBinaryStream("img");
-	                //int id=rs.getInt("id");
 
 
 
@@ -86,8 +83,9 @@ public class GiornaleDao {
 	    }
 	
 	public float getCosto(Giornale g) 
-	{		 Connection conn = ConnToDb.generalConnection();	
-	float prezzo=(float) 0.0;
+	{	
+		Connection conn = ConnToDb.generalConnection();	
+		float prezzo=(float) 0.0;
 
 
 		try {
@@ -142,11 +140,11 @@ public class GiornaleDao {
 			 
 				
 			}
-			 System.out.println("Ho chiuso tutto");
+			 bso.log.Log.logger.info("Ho chiuso tutto");
 			 
 		 }
 
-		 System.out.println("LibroDao. questy");
+		 bso.log.Log.logger.info("LibroDao. questy");
 
 		}
 
@@ -176,11 +174,11 @@ public class GiornaleDao {
 			 
 				
 			}
-			 System.out.println("Ho chiuso tutto");
+			 bso.log.Log.logger.info("Ho chiuso tutto");
 			 
 		 }
 
-		 System.out.println("LibroDao. privilegi");
+		 bso.log.Log.logger.info("LibroDao. privilegi");
 
 }
 	
@@ -198,7 +196,7 @@ public class GiornaleDao {
 		
         while(rs.next())
         {
-           // System.out.println("res :"+rs);
+           // bso.log.Log.logger.info("res :"+rs);
 
     		try {
 				catalogo.add(f.createGiornale("giornale",rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getDate(5).toLocalDate(),rs.getInt(6),rs.getInt(7),rs.getFloat(8),rs.getInt(9)));
@@ -214,7 +212,7 @@ public class GiornaleDao {
 			e1.printStackTrace();
 		}
 		finally {
-    	//System.out.println(catalogo);
+    	//bso.log.Log.logger.info(catalogo);
 
         try {
 			conn.close();
@@ -242,7 +240,7 @@ public class GiornaleDao {
         	//(Rivista) f.createRivista("rivista", rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getDate(7).toLocalDate(),rs.getInt(8),rs.getFloat(9),rs.getInt(10),rs.getInt(11)); 
         }
         else {
-        	System.out.println("non ho torvato un cazzo e ritorno null");
+        	bso.log.Log.logger.info("non ho torvato un cazzo e ritorno null");
 
         }
 		} catch (SQLException e) {
@@ -334,7 +332,7 @@ public class GiornaleDao {
         	name = rs.getString(1);
         }
         else {
-        	System.out.println("non ho torvato un cazzo e ritorno null");
+        	bso.log.Log.logger.info("non ho torvato un cazzo e ritorno null");
             name=null;
 
         }	
@@ -534,7 +532,7 @@ public class GiornaleDao {
 					
 					prepQ.executeUpdate();
 					//conn.close();
-				 	System.out.println("Giornale Inserito con successo");
+				 	bso.log.Log.logger.info("Giornale Inserito con successo");
 				 	state= true; // true		 			 	
 				}
 				else {
@@ -581,7 +579,7 @@ public class GiornaleDao {
 			}
 		}
 		
-		System.out.println("Giornale cancellato : "+row);
+		bso.log.Log.logger.info("Giornale cancellato : "+row);
 	}
 
 	public ObservableList<Giornale> getGiornaliSingoloById(Giornale g)  {
@@ -617,8 +615,7 @@ public class GiornaleDao {
 				}
 			}
 
-		
-		System.out.println(catalogo);
+
 		return catalogo;
 		
 	}
@@ -635,8 +632,6 @@ public class GiornaleDao {
 
         		try {
         			catalogo.add(f.createGiornale("giornale", rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4), rs.getDate(5).toLocalDate(),rs.getInt(6),rs.getInt(7),rs.getFloat(8),rs.getInt(9)));
-					//catalogo.add(f.createLibro("libro",rs.getString(1),rs.getInt(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getDate(8).toLocalDate(),rs.getString(9),rs.getInt(10),rs.getString(11),rs.getInt(12),rs.getFloat(13),rs.getInt(14),rs.getInt(15)));
-					//rs=rs.next();
         		} catch (Exception e) {
 				 
 					
@@ -644,7 +639,6 @@ public class GiornaleDao {
 
             }
 		c.close();
-		System.out.println(catalogo);
 		return catalogo;
 		
 
@@ -654,14 +648,9 @@ public class GiornaleDao {
 		
 		int rowAffected=0;
 		
-		
-		
-		//System.out.println("IdLibro prima del try nel dao:"+l.getId());
+	 
 
-		
-	 	 
-
-			 conn = ConnToDb.generalConnection();
+			conn = ConnToDb.generalConnection();
 			try {
 				st=conn.createStatement();
 			query="USE ispw";
@@ -689,17 +678,12 @@ public class GiornaleDao {
 			prepQ.setInt(6,g.getCopieRimanenti());
 			prepQ.setInt(7,g.getDisponibilita());
 			prepQ.setFloat(8,g.getPrezzo());
-			//prepQ.setInt(14,l.getCopieRim());
-		//	prepQ.setInt(15,l.getId());
-
 
 			rowAffected = prepQ.executeUpdate();
 			prepQ.close();
 			
-            System.out.println(("Row affected "+ rowAffected));
-            
 			} catch (SQLException e) {
-			 
+				
 				
 			}
 			finally {

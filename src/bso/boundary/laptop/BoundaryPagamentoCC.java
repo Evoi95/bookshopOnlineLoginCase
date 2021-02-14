@@ -108,7 +108,7 @@ public class BoundaryPagamentoCC implements Initializable {
 			stage.show();
 			}
 		} else {
-			System.out.println("riprovare");
+			bso.log.Log.logger.info("riprovare");
 			Stage stage;
 			Parent root;
 			stage = (Stage) buttonI.getScene().getWindow();
@@ -177,7 +177,7 @@ public class BoundaryPagamentoCC implements Initializable {
 		try {
 
 			String nomeUt = nomeInput.getText();
-			System.out.println("Nome utemte :" + nomeUt);
+			bso.log.Log.logger.info("Nome utemte :" + nomeUt);
 			if (nomeUt.equals("") || nomeUt.equals(null)) {
 				buttonPrendi.setDisable(true);
 				throw new IOException();

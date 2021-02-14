@@ -139,7 +139,7 @@ private User( String nome, String cognome, String email, String password,LocalDa
 		// rivedere il pickdata per fare l'assegnaziopne dei dati qui nella classe
 		// presi dal dao 
 		a="Sono loggato come User generico";
-		System.out.println(a);
+		bso.log.Log.logger.info(a);
 		return null;
 		
 	}

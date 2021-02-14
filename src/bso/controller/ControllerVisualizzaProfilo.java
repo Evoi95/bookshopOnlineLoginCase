@@ -25,7 +25,7 @@ public class ControllerVisualizzaProfilo {
 		{
 			User.getInstance().setNull();
 			status=true;
-			//System.out.println("USer @"+u.getInstance());
+			//bso.log.Log.logger.info("USer @"+u.getInstance());
 		}
 		return status;
 

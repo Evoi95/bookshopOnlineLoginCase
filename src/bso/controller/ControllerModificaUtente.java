@@ -85,10 +85,10 @@ public class ControllerModificaUtente {
 		{
 			//
 			//System.err.println("Something went wrong.");
-			System.out.println("Ho torvato LocalDate come : "+localDate);
+			bso.log.Log.logger.info("Ho torvato LocalDate come : "+localDate);
 			// commento di test per vedere quale dato si rompe
 			// test di modifica utente
-			//System.out.println(localDate+"\n"+User.getInstance().getDataDiNascita());
+			//bso.log.Log.logger.info(localDate+"\n"+User.getInstance().getDataDiNascita());
 					/*User.getInstance().getIdRuolo() +"\n"+ User.getInstance().getNome()+"\n"+User.getInstance().getCognome()+"\n"+
 					User.getInstance().getEmail()+"\n"+User.getInstance().getPassword()+"\n"+
 					User.getInstance().getDescrizione()+"\n"+User.getInstance().getDataDiNascita());*/
